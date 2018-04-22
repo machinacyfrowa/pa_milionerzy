@@ -44,8 +44,17 @@ class Gra
     {
       //udzielono prawidłowej odpowiedzi
       echo "Udzielono poprawnej odpowiedzi";
-      $this->numerPytania++;
-      $this->nowePytanie();
+      if($this->numerPytania == 12)
+      {
+        echo "Wygrałeś milion złotych!";
+        exit();
+      }
+      else
+      {
+        $this->numerPytania++;
+        $this->nowePytanie();
+      }
+
     }
     else
     {
