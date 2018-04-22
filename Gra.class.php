@@ -51,6 +51,12 @@ class Gra
     {
       //udzielono błędnej odpowiedzi
       echo "Udzielono błednej odpowiedzi";
+      if($this->numerPytania <= 2)
+        echo "Wygrałeś(aś) 0 zł<br>";
+      if($this->numerPytania > 2 && $this->numerPytania <= 7)
+        echo "Wygrałeś(aś) 1000 zł<br>";
+      if($this->numerPytania > 7)
+        echo "Wygrałeś(aś) 40000 zł<br>";
       $this->numerPytania = 1;
       $this->bazaPytan->wczytajPytania("pytania.txt");
       $this->nowePytanie();
