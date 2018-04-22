@@ -34,6 +34,10 @@ class Gra
   {
     $this->obecnePytanie->publicznosc();
   }
+  function przyjaciel()
+  {
+    $this->obecnePytanie->przyjaciel();
+  }
   function udzielOdpowiedzi($o)
   {
     if($this->obecnePytanie->sprawdzOdpowiedz($o))

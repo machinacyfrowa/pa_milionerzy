@@ -87,6 +87,20 @@ class Pytanie
       echo $indeks.": ".$procent."<br>";
     }
   }
+  function przyjaciel()
+  {
+    //przyjaciel ma pewnosc w 80% przypadkow i strzela w 20% przypadkow
+    if(rand(0,100) <= 80)
+    {
+      //przyjaciel ma racje
+      echo "Jestem pewien, że prawidłowa odpowiedz to ".$this->prawidlowaOdpowiedz."<br>";
+    }
+    else
+    {
+      //przyjaciel strzela
+      echo "Wydaje mi się, że prawidłowa odpowiedź to ".array_rand($this->odpowiedzi)."<br>";
+    }
+  }
 }
 
 
