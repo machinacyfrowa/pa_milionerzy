@@ -30,6 +30,10 @@ class Gra
   {
     $this->obecnePytanie->polNaPol();
   }
+  function publicznosc()
+  {
+    $this->obecnePytanie->publicznosc();
+  }
   function udzielOdpowiedzi($o)
   {
     if($this->obecnePytanie->sprawdzOdpowiedz($o))

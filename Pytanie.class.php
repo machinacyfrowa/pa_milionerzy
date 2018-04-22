@@ -37,6 +37,38 @@ class Pytanie
       $noweOdpowiedzi[$indeks] = $this->odpowiedzi[$indeks];
       $this->odpowiedzi = $noweOdpowiedzi;
   }
+  function publicznosc()
+  {
+    $procenty = Array();
+    if(count($this->odpowiedzi) == 4)
+    {
+      //brak pol na pol
+      for($i = 'a'; $i <= 'd'; $i++)
+      {
+        $procenty[$i] = rand(0,20);
+      }
+      $procenty[$this->prawidlowaOdpowiedz] = 0;
+      $suma = array_sum($procenty);
+      $procenty[$this->prawidlowaOdpowiedz] = 100 - $suma;
+    }
+    else
+    {
+      //użyto pół na pół
+      $procenty = $this->odpowiedzi;
+      foreach ($procenty as $indeks => &$odpowiedz) {
+        if($indeks == $this->prawidlowaOdpowiedz)
+          $odpowiedz = rand(40,80);
+        else $odpowiedz = 0;
+      }
+      var_dump($procenty);
+      $indeksBlednejOdpowiedzi = array_search(0, $procenty);
+      $procenty[$indeksBlednejOdpowiedzi] = 100 - $procenty[$this->prawidlowaOdpowiedz];
+    }
+    echo "Publiczność podpowiada: <br>";
+    foreach ($procenty as $indeks => $procent) {
+      echo $indeks.": ".$procent."<br>";
+    }
+  }
 }
 
 

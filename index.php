@@ -12,11 +12,14 @@ if(isset($_REQUEST['odpowiedz']))
     $gra->udzielOdpowiedzi($_REQUEST['odpowiedz']);
 if(isset($_REQUEST['polnapol']))
     $gra->polNaPol();
+if(isset($_REQUEST['publicznosc']))
+    $gra->publicznosc();
 
 $gra->wyswietlPytanie();
 
 
 echo '<a href="index.php?polnapol">Pół na pół</a>';
+echo '<a href="index.php?publicznosc">Pytanie do publiczności</a>';
 // Zapisujemy zmiany do sesji
 $_SESSION['gra'] = $gra;
 echo '<pre>';
