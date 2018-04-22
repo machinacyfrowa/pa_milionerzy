@@ -26,6 +26,10 @@ class Gra
       $this->stawki[$this->numerPytania].' złotych</h1>';
     $this->obecnePytanie->wyswietlPytanie();
   }
+  function polNaPol()
+  {
+    $this->obecnePytanie->polNaPol();
+  }
   function udzielOdpowiedzi($o)
   {
     if($this->obecnePytanie->sprawdzOdpowiedz($o))

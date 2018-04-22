@@ -27,6 +27,16 @@ class Pytanie
     if($o == $this->prawidlowaOdpowiedz) return true;
     else return false;
   }
+  function polNaPol()
+  {
+      $noweOdpowiedzi = Array();
+      $noweOdpowiedzi[$this->prawidlowaOdpowiedz] =
+                                $this->odpowiedzi[$this->prawidlowaOdpowiedz];
+      unset($this->odpowiedzi[$this->prawidlowaOdpowiedz]);
+      $indeks = array_rand($this->odpowiedzi);
+      $noweOdpowiedzi[$indeks] = $this->odpowiedzi[$indeks];
+      $this->odpowiedzi = $noweOdpowiedzi;
+  }
 }
 
 

@@ -10,8 +10,13 @@ else {
 }
 if(isset($_REQUEST['odpowiedz']))
     $gra->udzielOdpowiedzi($_REQUEST['odpowiedz']);
+if(isset($_REQUEST['polnapol']))
+    $gra->polNaPol();
+
 $gra->wyswietlPytanie();
 
+
+echo '<a href="index.php?polnapol">Pół na pół</a>';
 // Zapisujemy zmiany do sesji
 $_SESSION['gra'] = $gra;
 echo '<pre>';
