@@ -14,7 +14,7 @@ class Pytanie
   function wyswietlPytanie()
   {
     echo '<h1>'.$this->tresc.'</h1>';
-    echo '<form method="post">';
+    echo '<form action="index.php" method="post">';
     foreach ($this->odpowiedzi as $klucz => $wartosc) {
       echo '<input type="radio" name="odpowiedz"
               value="'.$klucz.'">'.$wartosc;
